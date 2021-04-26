@@ -13,12 +13,12 @@ function setup() {
 } // end setup
 
 function preload() {
-  img = loadImage('stargif.gif');
+  img = loadImage('https://cheerchow.github.io/portfolio/stargif.gif');
  
 }
 function draw() {
   
-  background(220);
+  background(184, 216, 224);
   if (gameState == "L1"){
   levelOne();
   }
@@ -27,6 +27,9 @@ function draw() {
   }
     if (gameState =="L3"){
     levelThree();
+  }
+     if (gameState =="L4"){
+    levelFour();
   }
   
   
@@ -84,11 +87,17 @@ function levelThree(){
     score = score +1;
     ballSize= ballSize -1;
   }
- // if (score>=15){
- //  background(random(255)); 
- // }
-//  line(ballx, bally, mouseX, mouseY);
+ if (score>20){
+    gamesState="L4";
+ }
+ 
+ 
+  function LevelFour(){
+  
+    text("you won", width/2, height-20);
+  }
+
   
   image(img,ballx, bally, ballSize, ballSize);
   
-} //end level three
+} 
